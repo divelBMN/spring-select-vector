@@ -25,4 +25,9 @@ public class ApiVector {
     public Integer getDimensionsCount(@RequestBody VectorDao vectorDao) {
         return service.getDimensionsCount(vectorDao);
     }
+
+    @PostMapping("/length")
+    public Double getLength(@RequestBody VectorDao vectorDao) {
+        return service.getLength(vectorDao);
+    }
 }

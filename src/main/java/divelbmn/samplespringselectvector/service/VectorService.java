@@ -15,9 +15,16 @@ public class VectorService {
     ApplicationContext context = new AnnotationConfigApplicationContext(VectorConfig.class);
 
 
-    public Integer getDimensionsCount(VectorDao vectorDao) {
-        Vector vector = (Vector) context.getBean("vector", vectorDao);
+    public Integer getDimensionsCount(VectorDao dao) {
+        return vector(dao).dimensionsCount();
+    }
 
-        return vector.dimensionsCount();
+    public Double getLength(VectorDao dao) {
+        return vector(dao).length();
+    }
+
+
+    private Vector vector(VectorDao dao) {
+        return (Vector) context.getBean("vector", dao);
     }
 }
