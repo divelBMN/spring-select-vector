@@ -11,5 +11,5 @@ import java.util.List;
 @NoArgsConstructor @AllArgsConstructor
 public class VectorDao {
 
-    private List<Integer> values;
+    private List<Double> values;
 }
